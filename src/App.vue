@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld v-bind:value="info">
+        <h2>С новым годом!</h2>
+    </HelloWorld>
   </div>
 </template>
 
@@ -12,6 +13,17 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data(){
+    return{
+      info: {
+        name: "Новогодняя пицца",
+        price: "599руб",
+        size: "40см",
+        include: "тесто, сыр, кетчеп, колбаса, томаты",
+        img: "https://static.pizzasushiwok.ru/images/menu_new/6-1300.jpg"
+      }
+    }
   }
 }
 </script>
@@ -24,5 +36,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h2 {
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: crimson;  
 }
 </style>
